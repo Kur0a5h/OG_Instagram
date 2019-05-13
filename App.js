@@ -1,6 +1,19 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, TextInput } from 'react-native';
-import {f, auth, db} from './config/config';
+import {f, auth, db, storage} from './config/config';
+import {createBottomTabNavigator} from 'react-navigation';
+
+import feed from './app/screens/feed';
+import profile from './app/screens/profile';
+import upload from './app/screens/upload';
+
+const MainStack = createBottomTabNavigator(
+  {
+    Feed: { screen: feed },
+    Upload: { screen: upload },
+    Profile: { screen: profile }
+  }
+)
 
 
 export default class App extends React.Component {
