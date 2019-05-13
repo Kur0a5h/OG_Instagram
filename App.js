@@ -33,7 +33,7 @@ export default class App extends React.Component {
   loginUser = async(email, pass) => {
 
     if(email != '' && pass != ''){
-      //
+      //if they are there
       try{
         let user = await auth.signInWithEmailAndPassword(email, pass);
         console.log(user);
@@ -73,7 +73,7 @@ export default class App extends React.Component {
 
   }
 
-    signUserOut = () => {
+  signUserOut = () => {
     auth.signOut()
     .then(() => {
       console.log('Logged out...');
@@ -99,7 +99,7 @@ export default class App extends React.Component {
         ) : (
           <View>
 
-            { this.state.emailLoginView == true } (
+            { this.state.emailLoginView == true ? (
 
               <View>
                 <Text>Email:</Text>
@@ -118,7 +118,7 @@ export default class App extends React.Component {
 
 
               <TouchableHighlight
-                onPress={ () => this.loginUser(this.state.email, this.state.password) }
+                onPress={ () => this.loginUser(this.state.email, this.state.pass) }
                 style={{backgroundColor: 'green'}}>
                 <Text>Login</Text>
               </TouchableHighlight>
