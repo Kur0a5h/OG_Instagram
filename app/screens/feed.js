@@ -27,6 +27,10 @@ class feed extends React.Component{
                             style={{resizeMode: 'cover', width: 100%, heightL: 275}}
                             />
                     </View>
+                    <View>
+                        <Text>Caption text here...</Text>
+                        <Text>View Comments...</Text>
+                    </View>
                 </View>
 
                 
