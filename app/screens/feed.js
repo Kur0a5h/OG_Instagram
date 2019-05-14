@@ -24,7 +24,7 @@ class feed extends React.Component{
                     <View>
                         <Image
                             source={{uri: 'https://source.unsplash.com/random/500x'+Math.floor((Math.random() * 800) + 500)}}
-                            style={{resizeMode: 'cover', width: 100%, heightL: 275}}
+                            style={{resizeMode: 'cover', width: '100%', height: 275}}
                             />
                     </View>
                     <View>
