@@ -10,8 +10,14 @@ class feed extends React.Component{
     render()
     {
         return(
-            <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
+            <View style={{flex:1}}>
+
+                <View style={{height: 70, paddingTop: 30, backgroundColor: 'white', borderColor: 'lightgrey', borderBottomWidth: 0.5, justifyContent: 'center', alignItems: 'center'}}>
                 <Text>Feed</Text>
+                </View>
+                
+
+                
             </View>
         )
     }
