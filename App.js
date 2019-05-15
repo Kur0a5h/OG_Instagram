@@ -1,6 +1,6 @@
 import React from 'react';
 import { StyleSheet, Text, View, TouchableHighlight, TextInput } from 'react-native';
-import {f, auth, db, storage} from './config/config';
+import {f, auth, db, storage} from './config/firebase_config';
 import {createBottomTabNavigator} from 'react-navigation';
 
 import feed from './app/screens/feed.js';
