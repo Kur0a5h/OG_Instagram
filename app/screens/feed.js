@@ -5,6 +5,20 @@ class feed extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            photo_feed: [0,1,2,3,4],
+            refresh: false
+        }
+    }
+
+    loadNew = () => {
+        this.setState({
+            refresh: true
+        });
+        this.setState({
+            photo_feed: [5,6,7,8,9],
+            refresh: false
+        })
     }
 
     render()
@@ -15,9 +29,16 @@ class feed extends React.Component{
                 <View style={{height: 70, paddingTop: 30, backgroundColor: 'white', borderColor: 'lightgrey', borderBottomWidth: 0.5, justifyContent: 'center', alignItems: 'center'}}>
                 <Text>Feed</Text>
                 </View>
-                
-                <View>
-                    <View>
+                <FlatList
+                    refreshing={this.state.refresh}
+                    onRefresh={this.loadNew}
+                    data={this.state.photo_feed}
+                    keyExtractor={(item, index) => index.toString()}
+                    style={{flex:1, backgroundColor:'#eee'}}
+                    renderItem={({item, index}) => (
+
+                <View key={index} style={{width: '100%', overlflow: 'hidden', marginBottom: 5, justifyContent: 'space-between', borderBottomWidth: 1, borderColor: 'grey'}}>
+                    <View style={{padding: 5, width: '100%', flexDirection: 'row', justifyContent: 'space-between'}}>
                         <Text>Time Ago</Text>
                         <Text>@LizardBwoi</Text>
                     </View>
@@ -27,13 +48,13 @@ class feed extends React.Component{
                             style={{resizeMode: 'cover', width: '100%', height: 275}}
                             />
                     </View>
-                    <View>
+                    <View style={{padding: 5}}>
                         <Text>Caption text here...</Text>
-                        <Text>View Comments...</Text>
+                        <Text style={{marginTop: 10, textAlign: 'center'}}>View Comments...</Text>
                     </View>
-                </View>
-
-                
+                    </View>
+                )}
+                />
             </View>
         )
     }
