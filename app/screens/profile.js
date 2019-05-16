@@ -1,17 +1,48 @@
 import React from 'react';
 import { FlatList, StyleSheet, Text, View, Image } from 'react-native';
+import {f, auth, database, storage} from '../../config/firebase_config';
+
 
 class profile extends React.Component{
 
     constructor(props){
         super(props);
+        this.state = {
+            loggedin: false
+        }
+
+    }
+
+    componentDidMount = () =>{
+        var that = this;
+        f.auth().onAuthStateChanged(function(user){
+            if(user){
+                //Logged in
+                that.setState({
+                    loggedin: true
+                })
+            }else{
+                //Not logged in
+                that.setState({
+                    loggedin:false
+                })
+            }
+        })
     }
 
     render()
     {
         return(
             <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
-                <Text>Profile</Text>
+                { this.state.loggedin == true ?(
+                    //are logged in
+                    <Text>Profile</Text>
+                ) : (
+                    <View>
+                        <Text>You are not logged in</Text>
+                        <Text>Please login to view your profile</Text>
+                    </View>
+                )}
             </View>
         )
     }
