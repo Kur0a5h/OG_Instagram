@@ -1,9 +1,9 @@
 {
   "devToolsPort": 19002,
-  "expoServerPort": 19000,
-  "packagerPort": 19001,
-  "packagerPid": 31528,
-  "expoServerNgrokUrl": "https://28-tpt.anonymous.og-instagram.exp.direct",
-  "packagerNgrokUrl": "https://packager.28-tpt.anonymous.og-instagram.exp.direct",
-  "ngrokPid": 31594
+  "expoServerPort": null,
+  "packagerPort": null,
+  "packagerPid": null,
+  "expoServerNgrokUrl": null,
+  "packagerNgrokUrl": null,
+  "ngrokPid": null
 }
